@@ -11,7 +11,8 @@ final class Init {
      */
     public static function get_services(){
         return [
-            Pages\Admin:class
+            Pages\Admin:class,
+            Base\Enqueue:class
         ];
     }
 
@@ -31,8 +32,8 @@ final class Init {
     }
 
     /** Inicialize the class
-     * @param  [type] $class [description]
-     * @return [type]        [description]
+     * @param  class $class class from the services array
+     * @return class instance new instance of the class
      */
     public static function instantiate($class){
         $service =  new $class(); 
