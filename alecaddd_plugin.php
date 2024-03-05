@@ -50,6 +50,7 @@ Public License instead of this License.
 //     die;
 // }
 
+// If this file called firectly, abort!!
 defined('ABSPATH') OR die('Hey, you can\'t access this file, you silly human!');
 
 // if (!function_exists('add_action')){
@@ -57,16 +58,31 @@ defined('ABSPATH') OR die('Hey, you can\'t access this file, you silly human!');
 //     die;
 // }
 
+// Require once the COmposer Autoload
 if( file_exists(dirname(__FILE__) . '/vendor/autoload.php')){
     require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
-defined('PLUGIN_PATH', plugin_dir_path( __FILE__ ));
-defined('PLUGIN_URL' , plugin_dir_url( __FILE__ ));
-defined('PLUDIN', plugin_basename(__FILE__))
 
+/**
+ * The code that runs during plugin activation
+ */
+function activate_alecaddd_plugin(){
+    Inc/Base/Activate::activate();
+}
+register_activation_hook( __FILE__ , 'activate_alecaddd_plugin' );
 
+/**
+ * The code that runs during plugin deactivation
+ */
+function deactivate_alecaddd_plugin(){
+    Inc/Base/Deactivate::deactivate();
+}
+register_deactivation_hook( __FILE__ , 'deactivate_alecaddd_plugin' );
 
+/**
+ * Initialize all the core classes of the plugin
+ */
 if( class_exists('Inc\\Init')){
     Inc\Init::register_services();
 }

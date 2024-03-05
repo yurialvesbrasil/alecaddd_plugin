@@ -5,10 +5,13 @@
 
 namespace Inc\Pages;
 
+use /Inc/Base/BaseController;
+
 /**
  * 
  */
- class Admin{
+ class Admin extends BaseController
+ {
 
    function register() {
       add_action( 'admin_menu', array($this, 'add_admin_pages') );
@@ -27,7 +30,7 @@ namespace Inc\Pages;
 
    public function admin_index(){
       //required template
-      require_once PLUGIN_PATH . 'templates/admin.php';
+      require_once  $this->plugin_path . 'templates/admin.php';
    }
  }
  
