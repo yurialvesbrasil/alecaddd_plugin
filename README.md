@@ -55,3 +55,15 @@ _Versão mínima do PHP para o plugin é PHP 5.3.0_
 ## Informações Adicionais
 
 Init.php -> serve para instanciar as classes e executar a função register();
+
+## Section and features
+
+- Modular Administration Area
+- CPT Manager
+- Custon Taxonomy Manager
+- Widget to Upload and Display media in sidebars
+- Post and Page Gallery integration
+- Testimonial section: Comment in the front-end, Admins can approve comments, select witch comments to display
+- Custom template sections
+- Ajax based Login/Registration system
+- Membership protected area
